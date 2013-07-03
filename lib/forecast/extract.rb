@@ -10,7 +10,7 @@ module Forecast
     # Default API endpoint
     DEFAULT_FORECAST_IO_API_ENDPOINT = 'https://api.forecast.io'
     
-    API_KEY = '7646eeb396a97ec9481b2727933f0e03'
+    API_KEY = 'YOUR_API_KEY'
    
     def initialize(latitude, longitude)
       @latitude  = latitude

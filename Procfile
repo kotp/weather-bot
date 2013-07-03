@@ -1,2 +1,2 @@
-web: bundle exec ruby "..lib/forecast/extract.rb"
+worker: bundle exec ruby lib/forecast/extract.rb
 

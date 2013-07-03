@@ -3,7 +3,6 @@
 
 require 'rest-client'
 require 'json'
-require 'logger'
 
 module Forecast  
   class Extract  
@@ -19,14 +18,11 @@ module Forecast
     end
     
     def get_weather_forecast
-      log = Logger.new(STDOUT)
-      log.level = Logger::INFO
       parsed = JSON.parse(RestClient.get(URI.encode(@forecast_url)))
       msg = "The current weather summary = "+"#{parsed["currently"]["summary"]}"+" and the temperature in F is "+"#{parsed["currently"]["temperature"].to_s}. "
       if !(parsed["alerts"].nil?)
         msg += "An alert has been issued: "+"#{parsed["alerts"][0]["title"]}"
       end
-      log.info msg
       return msg
     end
   end  

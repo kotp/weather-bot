@@ -3,6 +3,7 @@
 
 require 'rest-client'
 require 'json'
+require 'logger'
 
 module Forecast  
   class Extract  
@@ -28,5 +29,7 @@ module Forecast
   end  
 end 
 
+log = Logger.new(STDOUT)
+log.level = Logger::INFO
 forecast = Forecast::Extract.new(37.423021, -122.083739)
-p forecast.get_weather_forecast
+log.info forecast.get_weather_forecast
